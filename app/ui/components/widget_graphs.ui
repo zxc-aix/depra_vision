@@ -1,0 +1,817 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>widgetGraphs</class>
+ <widget class="QWidget" name="widgetGraphs">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1110</width>
+    <height>810</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1110</width>
+    <height>810</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Object trajectory map</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="1" column="0">
+    <widget class="QPushButton" name="btnBuildGraph">
+     <property name="minimumSize">
+      <size>
+       <width>180</width>
+       <height>40</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>Build a trajectory graph</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QPushButton" name="btnLoadData">
+     <property name="minimumSize">
+      <size>
+       <width>180</width>
+       <height>40</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>Load data into table</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0" colspan="3">
+    <widget class="QLabel" name="lblTrajectory">
+     <property name="minimumSize">
+      <size>
+       <width>746</width>
+       <height>746</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background: black</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="4">
+    <widget class="QPushButton" name="btnExportDataAll">
+     <property name="minimumSize">
+      <size>
+       <width>180</width>
+       <height>40</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>Download data</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="2">
+    <widget class="QPushButton" name="btnSaveGraph">
+     <property name="minimumSize">
+      <size>
+       <width>180</width>
+       <height>40</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>Save graph</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="4">
+    <widget class="QGroupBox" name="groupBox">
+     <property name="minimumSize">
+      <size>
+       <width>320</width>
+       <height>700</height>
+      </size>
+     </property>
+     <property name="title">
+      <string>Parameters</string>
+     </property>
+     <widget class="QCheckBox" name="chbShStEn">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>25</y>
+        <width>280</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>280</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Display start and end points</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="checkbDiveTraj">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>50</y>
+        <width>280</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>280</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Display trajectory underwater</string>
+      </property>
+     </widget>
+     <widget class="QDoubleSpinBox" name="dsbSpdThFS">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>180</y>
+        <width>70</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>70</width>
+        <height>30</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="chbAddZones">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>75</y>
+        <width>280</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>280</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Display zones</string>
+      </property>
+     </widget>
+     <widget class="QDoubleSpinBox" name="dsbStopTimeTh">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>260</y>
+        <width>70</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>70</width>
+        <height>30</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblSpdThFS">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>180</y>
+        <width>210</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>210</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Velocity separation threshold, cm/s</string>
+      </property>
+     </widget>
+     <widget class="QDoubleSpinBox" name="dsbStopSpdTh">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>220</y>
+        <width>70</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>70</width>
+        <height>30</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblStopSpdTh">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>220</y>
+        <width>210</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>210</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Speed stop threshold, cm/s</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblStopTimeTh">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>260</y>
+        <width>210</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>210</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Stop fixation threshold, sec</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblThick">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>404</y>
+        <width>210</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>210</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Bridge thickness</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="chbBuildBr">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>370</y>
+        <width>130</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>130</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Build a bridge</string>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="sbThick">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>404</y>
+        <width>70</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>70</width>
+        <height>30</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblAngleDist">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>440</y>
+        <width>210</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>210</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Angular direction condition, cm</string>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="sbAngleDist">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>440</y>
+        <width>70</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>70</width>
+        <height>30</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="sbAngleTime">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>476</y>
+        <width>70</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>70</width>
+        <height>30</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblAngleTime">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>476</y>
+        <width>210</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>210</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Angular direction condition, sec</string>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="sbAnglePer">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>512</y>
+        <width>70</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>70</width>
+        <height>30</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblAnglePer">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>512</y>
+        <width>210</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>210</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Angular direction condition, %</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblTimeStart">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>548</y>
+        <width>210</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>210</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Start time for the training index, sec</string>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="sbTimeStart">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>548</y>
+        <width>70</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>70</width>
+        <height>30</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblTimeEnd">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>584</y>
+        <width>210</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>210</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>End time for the training index, sec</string>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="sbTimeEnd">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>584</y>
+        <width>70</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>70</width>
+        <height>30</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="chbWrap">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>370</y>
+        <width>150</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>150</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Add zone outlines</string>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="sbT0">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>656</y>
+        <width>70</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>70</width>
+        <height>30</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="sbT1">
+      <property name="geometry">
+       <rect>
+        <x>87</x>
+        <y>656</y>
+        <width>70</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>70</width>
+        <height>30</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="sbT2">
+      <property name="geometry">
+       <rect>
+        <x>164</x>
+        <y>656</y>
+        <width>70</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>70</width>
+        <height>30</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="sbT3">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>656</y>
+        <width>70</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>70</width>
+        <height>30</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblT0">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>620</y>
+        <width>50</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>50</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>t0</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblT1">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>620</y>
+        <width>50</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>50</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>t1</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblT2">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>620</y>
+        <width>50</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>50</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>t2</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblT3">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>620</y>
+        <width>5030</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>50</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>t3</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblThError">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>140</y>
+        <width>210</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>210</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Model error threshold, sec</string>
+      </property>
+     </widget>
+     <widget class="QDoubleSpinBox" name="dsbThError">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>140</y>
+        <width>70</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>70</width>
+        <height>30</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblScale">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>100</y>
+        <width>210</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>210</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Trajectory graph scale</string>
+      </property>
+     </widget>
+     <widget class="QDoubleSpinBox" name="dsbScale">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>100</y>
+        <width>70</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>70</width>
+        <height>30</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnExportDataMorris">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>692</y>
+        <width>300</width>
+        <height>40</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>300</width>
+        <height>40</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Data export</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblWidthTraj">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>302</y>
+        <width>210</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>210</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Trajectory line thickness</string>
+      </property>
+     </widget>
+     <widget class="QDoubleSpinBox" name="dsblWidthTraj">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>300</y>
+        <width>70</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>70</width>
+        <height>30</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QDoubleSpinBox" name="dsbWidthMarkup">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>340</y>
+        <width>70</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>70</width>
+        <height>30</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblWidthMarkup">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>340</y>
+        <width>210</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>210</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Thickness of marking lines</string>
+      </property>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
