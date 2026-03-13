@@ -27,4 +27,4 @@ MIT
 
 ## Acknowledgements
 
-The authors would like to express their gratitude to **Gennady A. Pyavchenko**, PhD, Associate Professor at Sechenov University, and **Alexey E. Umryukhin**, Doctor of Medical Sciences, Associate Professor at Sechenov University, for providing the experimental materials and their valuable support.
+The authors would like to express their gratitude to **Gennadii A. Piavchenko**, PhD, Associate Professor at Sechenov University, and **Alexey E. Umryukhin**, Doctor of Medical Sciences, Associate Professor at Sechenov University, for providing the experimental materials and their valuable support.
